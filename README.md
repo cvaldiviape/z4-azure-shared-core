@@ -17,9 +17,19 @@ Librería con las respuestas HTTP y el manejo de errores comunes a los servicios
 
 ## Instalar en local
 
+Las librerías se compilan con Java 21. Si tu terminal usa otra versión (revisa con `java -version`), cámbiala primero:
+
+```bash
+export JAVA_HOME=$(/usr/libexec/java_home -v 21)
+```
+
+Después instala:
+
 ```bash
 ./mvnw install
 ```
+
+Si te olvidas del `export`, Maven falla con `class file version 65.0 ... only recognizes class file versions up to 61.0`: 65 es Java 21 y 61 es Java 17.
 
 Queda en `~/.m2/repository/com/z4greed/z4-shared-core`. Después de cambiar algo en la librería hay que volver a instalarla para que los servicios lo vean.
 
